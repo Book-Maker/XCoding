@@ -25,6 +25,12 @@ function buildChildEnv() {
 const electronBinary = require("electron");
 const args = process.argv.slice(2);
 
+// [Linux] Auto-disable sandbox in dev mode on Linux to avoid SUID permission issues
+// (common in development environments where chowning chrome-sandbox is annoying).
+if (process.platform === "linux" && !args.includes("--no-sandbox")) {
+  args.push("--no-sandbox");
+}
+
 function killOldXcodingElectron() {
   // Best-effort: kill orphaned XCoding child processes from previous dev runs that didn't exit cleanly.
   // Only targets this repo's bundled project service entry (dist/main/projectService.cjs).
@@ -58,7 +64,6 @@ function killOldXcodingElectron() {
 
 // Default on in dev; set XCODING_DEV_KILL_OLD=0 to disable.
 if (process.env.XCODING_DEV_KILL_OLD !== "0") killOldXcodingElectron();
-
 const child = spawn(electronBinary, args.length ? args : ["."], {
   stdio: "inherit",
   env: buildChildEnv()

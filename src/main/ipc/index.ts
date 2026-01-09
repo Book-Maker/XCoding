@@ -9,6 +9,7 @@ import { registerProjectIpc } from "./projectIpc";
 import { registerProjectsIpc } from "./projectsIpc";
 import { registerSettingsIpc } from "./settingsIpc";
 import { registerTerminalIpc } from "./terminalIpc";
+import { registerThemesIpc } from "./themesIpc";
 import { registerWindowIpc } from "./windowIpc";
 
 export function setupIpc({
@@ -23,6 +24,7 @@ export function setupIpc({
   setActiveSlotForWindow: (windowId: number, slot: number) => Promise<void>;
 }) {
   registerSettingsIpc({ onLanguageChanged });
+  registerThemesIpc();
   registerWindowIpc({ devServerUrl, onLastWindowClosed, setActiveSlotForWindow });
 
   registerProjectsIpc({ setActiveSlotForWindow });

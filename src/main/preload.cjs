@@ -196,9 +196,18 @@ contextBridge.exposeInMainWorld("xcoding", {
   settings: {
     get: () => ipcRenderer.invoke("settings:get"),
     setLanguage: (language) => ipcRenderer.invoke("settings:setLanguage", { language }),
+    setTheme: (theme) => ipcRenderer.invoke("settings:setTheme", { theme }),
+    setThemePack: (id) => ipcRenderer.invoke("settings:setThemePack", { id }),
     setAutoApply: (enabled) => ipcRenderer.invoke("settings:setAutoApply", { enabled }),
     setAiConfig: (payload) => ipcRenderer.invoke("settings:setAiConfig", payload),
     setLayout: (payload) => ipcRenderer.invoke("settings:setLayout", payload)
+  },
+  themes: {
+    list: () => ipcRenderer.invoke("themes:list"),
+    getResolved: (id) => ipcRenderer.invoke("themes:getResolved", { id }),
+    openDir: () => ipcRenderer.invoke("themes:openDir"),
+    openThemeDir: (id) => ipcRenderer.invoke("themes:openThemeDir", { id }),
+    importZip: () => ipcRenderer.invoke("themes:importZip")
   },
   os: {
     copyText: (text) => ipcRenderer.invoke("os:copyText", { text }),

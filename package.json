@@ -8,9 +8,10 @@
   "scripts": {
     "prebuild": "pnpm run setup:codex && pnpm run setup:claude-code",
     "preinstall": "node scripts/ensure-pnpm.cjs",
-    "postinstall": "node scripts/fix-node-pty-perms.cjs",
+    "postinstall": "node scripts/fix-node-pty-perms.cjs && node scripts/fetch-firacode-nerd-font.cjs",
     "setup:codex": "node scripts/fetch-codex-binary.cjs",
     "setup:claude-code": "node scripts/copy-claude-code.cjs",
+    "setup:fonts": "node scripts/fetch-firacode-nerd-font.cjs",
     "dev": "concurrently -k \"vite\" \"pnpm run main:watch\" \"wait-on http://127.0.0.1:5173 file:dist/main/main.cjs && pnpm run electron:dev\"",
     "main:watch": "tsup --config tsup.config.ts --watch --onSuccess \"node scripts/copy-preload.cjs\"",
     "electron:dev": "node scripts/electron-dev.cjs .",
@@ -18,7 +19,6 @@
     "start": "electron .",
     "lint": "eslint .",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test:codex-rpc": "tsx scripts/test-codex-jsonrpc.ts",
     "i18n:scan": "tsx scripts/i18n-scan.ts",
     "i18n:scan:fail": "tsx scripts/i18n-scan.ts --fail",
     "dist": "pnpm build && electron-builder --publish never",
@@ -49,12 +49,14 @@
     "remark-breaks": "^4.0.0",
     "remark-gfm": "^4.0.1",
     "vscode-jsonrpc": "^8.2.1",
-    "vscode-languageserver-protocol": "^3.17.5"
+    "vscode-languageserver-protocol": "^3.17.5",
+    "yauzl": "^2.10.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
+    "@types/yauzl": "^2.10.3",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
     "@vitejs/plugin-react": "^4.3.4",
